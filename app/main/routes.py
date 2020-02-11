@@ -9,4 +9,4 @@ import time
 @app.route("/index")
 @login_required
 def index():
-	return render_template('main.html', timestamp=time.time())
+	return render_template('main/main.html', timestamp=time.time())

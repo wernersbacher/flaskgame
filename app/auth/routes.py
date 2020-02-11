@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
-from app.forms.users import LoginForm, RegistrationForm
+from app.auth.forms import LoginForm, RegistrationForm
 # login stuff
 from flask_login import current_user, login_user
 from flask_login import logout_user
@@ -31,7 +31,7 @@ def login():
 		return redirect(next_page)
 
 	# just show the login template
-	return render_template('users/login.html', title='Sign In', form=form)
+	return render_template('auth/login.html', title='Sign In', form=form)
 
 
 @app.route('/logout')
@@ -51,4 +51,4 @@ def register():
 		db.session.commit()
 		flash('Congratulations, you are now a registered user!')
 		return redirect(url_for('login'))
-	return render_template('users/register.html', title='Register', form=form)
+	return render_template('auth/register.html', title='Register', form=form)

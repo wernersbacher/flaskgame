@@ -17,8 +17,13 @@ login.login_view = 'login' # tell flask-login which view handles logins
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# add routes
-from .routes import users, main_page
+# add packages
+from app.auth import blueprint as auth_bp
+app.register_blueprint(auth_bp)
+
+# add main routes
+from app.main import blueprint as main_bp
+app.register_blueprint(main_bp)
 
 # importing models
 from .models import *
