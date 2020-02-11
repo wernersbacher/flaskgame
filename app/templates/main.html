@@ -2,7 +2,8 @@
 
 {% block content %}
     <h1>Index</h1>
-    <h2>
-     It's now {{ timestamp }}
-    </h2>
+
+    <h3>Hi, {{ current_user.username }}!</h3>
+    Current timestamp: {{ timestamp }}
+
 {% endblock %}

@@ -1,9 +1,11 @@
-from flask import render_template, flash, redirect, url_for
-from app import app
-from app.forms.users import LoginForm
+from flask import render_template, flash, redirect, url_for, request
+from app import app, db
+from app.forms.users import LoginForm, RegistrationForm
 # login stuff
 from flask_login import current_user, login_user
 from flask_login import logout_user
+from werkzeug.urls import url_parse
+
 # db stuff
 from app.models.User import User
 
@@ -22,7 +24,11 @@ def login():
 			return redirect(url_for('login'))
 		# ok, login
 		login_user(user, remember=form.remember_me.data)
-		return redirect(url_for('index'))
+		# get back to the last site
+		next_page = request.args.get('next')
+		if not next_page or url_parse(next_page).netloc != '':
+			next_page = url_for('index')
+		return redirect(next_page)
 
 	# just show the login template
 	return render_template('users/login.html', title='Sign In', form=form)
@@ -32,3 +38,17 @@ def login():
 def logout():
 	logout_user()
 	return redirect(url_for('index'))
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+	if current_user.is_authenticated:
+		return redirect(url_for('index'))
+	form = RegistrationForm()
+	if form.validate_on_submit():
+		user = User(username=form.username.data, email=form.email.data)
+		user.set_password(form.password.data)
+		db.session.add(user)
+		db.session.commit()
+		flash('Congratulations, you are now a registered user!')
+		return redirect(url_for('login'))
+	return render_template('users/register.html', title='Register', form=form)
