@@ -17,8 +17,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # add routes
-from .routes.main_page import main_page
-app.register_blueprint(main_page)
+from .routes import users, main_page
 
 # importing models
 from .models import *
