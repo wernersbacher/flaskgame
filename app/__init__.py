@@ -11,6 +11,7 @@ app.config.from_object(Config)
 
 # add login manager
 login = LoginManager(app)
+login.login_view = 'login' # tell flask-login which view handles logins
 
 # create database stuff
 db = SQLAlchemy(app)
