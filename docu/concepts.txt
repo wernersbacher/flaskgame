@@ -1,0 +1,34 @@
+
+Menüs:
+
+Office: Nachrichten
+Racing: Race | Current
+My Cars: Garage | Dealer
+Team: Driver
+
+Ideen zur Logik:
+Zeitberechnungen mit größeren Abständen machen, für größere Zeitdifferenzen
+
+Ideen zu Autos:
+Je nach Typ gibt es Boni auf Untergründe.
+Spritverbrauch ist unterschiedlich, zb Trucks haben mehr verbrauch aber bessere mud eigeschaften.
+
+Ideen zur Garage:
+Anzeigen der eigenen Autos
+Anzeigen von kaufbaren Autos, diese sind vom Level abhängig und wieder zufällig. Es gibt selten und häufige Autos,
+sowie Autos mit besseren Grundwerten
+Jedes Auto kann upgegradet werden in 5-6 Bereichen, enstspricht Teileproduktion
+
+Ideen zum Racing:
+Zum Racen braucht man Sprit, welches sich automatisch auffüllt.
+Rennen verbrauchen Sprit.
+Es gibt Veranstaltungen, die haben zeitbelohnungen: je nach Sterne gibts geld. Erstes Sieg gibt 3x Geld
+Für neue Veranstaltungen müssen sterne verdient sein.
+Die Veranstaltungen sind auf den Strecken, die Zeitlimits sind also Prozente der Streckenzeit.
+
+Ideen zum Team:
+Fahrer können angeheuert werden, zufällige Stats an einem Tag.
+
+Mechaniker geben Boni auf verschiedene Aspekte des Autos, also handling, etc
+
+Ideen zu Upgrades:
