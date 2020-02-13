@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>That's an 500 error. Sorry, our fault!</h1>
+    <p>Sorry, we will fix this for you.</p>
+    <p><a href="{{ url_for('main.index') }}">Go back</a></p>
+{% endblock %}
