@@ -4,6 +4,8 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
+
 
 # add login manager
 login = LoginManager()
@@ -12,6 +14,8 @@ login.login_view = 'auth.login' # tell flask-login which view handles logins
 # create database stuff
 db = SQLAlchemy()
 migrate = Migrate()
+
+bootstrap = Bootstrap()
 
 def create_app(config_class=Config):
 
@@ -22,6 +26,7 @@ def create_app(config_class=Config):
 	login.init_app(app)
 	db.init_app(app)
 	migrate.init_app(app, db)
+	bootstrap.init_app(app)
 
 	# add packages
 	from app.auth import bp as auth_bp

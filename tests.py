@@ -57,6 +57,17 @@ class RacingTests(unittest.TestCase):
 		self.assertEqual(True, softslick > softmud)
 		self.assertEqual(True, softmud < hardmud)
 
+	def test_racing_car(self):
+		buggy1, _ = racing.getResult(trackid="germanyhs", carid="buggy1", tyreid="softslick")
+		buggy2, _ = racing.getResult(trackid="germanyhs", carid="buggy2", tyreid="softslick")
+		self.assertEqual(True, buggy1 > buggy2)
+
+
+		buggy1, _ = racing.getResult(trackid="germanybh", carid="buggy1", tyreid="softslick")
+		buggy2, _ = racing.getResult(trackid="germanybh", carid="buggy2", tyreid="softslick")
+		self.assertEqual(True, buggy1 < buggy2)
+
+
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)
