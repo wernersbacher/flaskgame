@@ -7,13 +7,13 @@ allcars = {
 				  accel=0.12,
 				  speed=0.15
 				  ),
-	"buggy2": Car("buggy1", "Buggy Do",
+	"buggy2": Car("buggy2", "Buggy Do",
 				  handling=0.1,
 				  brakes=0.12,
 				  accel=0.13,
 				  speed=0.05
 				  ),
-	"buggy3": Car("buggy1", "Buggy Baum",
+	"buggy3": Car("buggy3", "Buggy Baum",
 				  handling=0.08,
 				  brakes=0.2,
 				  accel=0.09,
